@@ -7,7 +7,7 @@ router.get('/cryptocompare/pricehistorical', function(req, res, next) {
   var tsyms = req.query.tsyms;
   var ts = req.query.ts;
 
-  var lkpUrl = 'https://min-api.cryptocompare.com/data/pricehistorical?fsym=' + fsym + '&tsyms=' + tsyms + '&ts=' + ts + '&extraParams=your_app_name';
+  var lkpUrl = 'https://min-api.cryptocompare.com/data/pricehistorical?fsym=' + fsym + '&tsyms=' + tsyms + '&ts=' + ts + '&extraParams=allminedco';
 
   request(lkpUrl, function (error, response, body) {
     console.log('REQUEST:');

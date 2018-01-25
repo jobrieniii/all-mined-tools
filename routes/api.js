@@ -2,12 +2,6 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-router.get('/', function(req, res, next) {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({ a: 1 }));
-});
-
-
 router.get('/cryptocompare/pricehistorical', function(req, res, next) {
   var fsym = req.query.fsym;
   var tsyms = req.query.tsyms;
@@ -19,6 +13,16 @@ router.get('/cryptocompare/pricehistorical', function(req, res, next) {
     res.setHeader('Content-Type', 'application/json');
     res.json(JSON.parse(response.body));
   });
+
+  console.log('REQUEST:');
+  console.log(req.query);
+
+  console.log('CRYPTOCOMPARE URL / RESPONSE:');
+  console.log(lkpUrl);
+  console.log(response.body);
+
+  console.log('-----');
+
 
 
 

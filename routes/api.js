@@ -6,8 +6,13 @@ router.get('/cryptocompare/pricehistorical', function(req, res, next) {
   var fsym = req.query.fsym;
   var tsyms = req.query.tsyms;
   var ts = req.query.ts;
+  var e = req.query.e;
 
-  var lkpUrl = 'https://min-api.cryptocompare.com/data/pricehistorical?fsym=' + fsym + '&tsyms=' + tsyms + '&ts=' + ts + '&extraParams=allminedco';
+  var lkpUrl = 'https://min-api.cryptocompare.com/data/pricehistorical?fsym=' + fsym;
+      lkpUrl = lkpUrl + '&tsyms=' + tsyms;
+      lkpUrl = lkpUrl + '&ts=' + ts;
+      lkpUrl = lkpUrl + '&e=' + e;
+      lkpUrl = lkpUrl + '&extraParams=allminedco';
 
   request(lkpUrl, function (error, response, body) {
     console.log('REQUEST:');
